@@ -205,7 +205,7 @@
                     "fileUris": [
                         "[parameters('scriptUri')]"
                     ],
-                    "commandToExecute": "[concat('sh install1.sh ', parameters('packageUri'))]"
+                    "commandToExecute": "[concat('sh install.sh ', parameters('packageUri'))]"
 
                 }
             }
