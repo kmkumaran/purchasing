@@ -1,0 +1,246 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF url(Images/img01.jpg);
+	font: normal small Georgia, "Times New Roman", Times, serif;
+	line-height: 1.8em;
+	color: #797C7A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	color: #715558;
+}
+
+h2 {
+	padding-left: 20px;
+	background: url(Images/img07.gif) no-repeat left center;
+	font-size: 22px;
+}
+
+h3 {
+	margin-bottom: 1em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: .9em;
+	font-weight: bold;
+}
+
+p, blockquote, ul, ol {
+	margin-top: 0;
+}
+
+blockquote {
+	padding: 0 0 0 40px;
+	background: url(Images/img09.gif) no-repeat;
+	line-height: 1.6em;
+}
+
+a {
+	background: url(Images/img06.gif) repeat-x left bottom;
+	text-decoration: none;
+	color: #5A5C53;
+}
+
+a:hover {
+	background: none;
+	text-decoration: underline;
+}
+
+/* Wrapper */
+
+#wrapper {
+	background: #FFFFFF url(Images/img02.jpg) repeat-x left top;
+}
+
+/* Menu */
+
+#menu {
+	width: 750px;
+	height: 60px;
+	margin: 0 auto;
+	background: url(Images/img03.jpg) no-repeat right top;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menu li {
+	display: block;
+	float: left;
+	width: 148px;
+	height: 60px;
+	padding: 0 0 0 2px;
+	background: url(Images/img02.gif) no-repeat;
+}
+
+#menu a {
+	display: block;
+	width: 108px;
+	height: 36px;
+	padding: 20px 20px 0 20px;
+	background: url(Images/img03.jpg) no-repeat;
+	letter-spacing: -1px;
+	text-align: center;
+	font-size: 1.6em;
+	color: #FFFFFF;
+}
+
+#menu a:hover {
+}
+
+#menu .active a {
+}
+
+/* Header */
+
+#header {
+	width: 754px;
+	height: 247px;
+	margin: 0 auto;
+	padding: 13px 0 0 0;
+}
+
+#header h1 {
+	float: left;
+	width: 104px;
+	height: 110px;
+	padding: 104px 100px 0 20px;
+	background: url(Images/img04.jpg) no-repeat;
+	line-height: 32px;
+	font-size: 30px;
+	font-style: italic;
+	color: #715558;
+}
+
+#header h2 {
+	float: right;
+	width: 494px;
+	height: 34px;
+	padding: 180px 20px 0 0;
+	background: url(Images/img05.jpg) no-repeat;
+	text-transform: lowercase;
+	text-align: right;
+	letter-spacing: -1px;
+	font-size: 22px;
+	font-weight: normal;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+/* Content */
+
+#content {
+	width: 750px;
+	margin: 0 auto;
+}
+
+/* Posts */
+
+#posts {
+	float: right;
+	width: 510px;
+}
+
+#posts .post {
+	padding-bottom: 30px;
+}
+
+#posts .story {
+	padding: 15px 20px 0 20px;
+	background: url(Images/img08.jpg) repeat-x;
+}
+
+#posts .meta {
+	padding: 5px 0 0 20px;
+	background: url(Images/img06.gif) repeat-x;
+}
+
+#posts .meta p {
+	margin: 0;
+	line-height: normal;
+	font-size: smaller;
+}
+
+#posts ul {
+}
+
+#posts ul li {
+}
+
+/* Links */
+
+#links {
+	float: left;
+	width: 220px;
+}
+
+#links ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#links li ul {
+	padding: 15px 20px 30px 20px;
+	background: url(Images/img08.jpg) repeat-x;
+}
+
+#links li li {
+	padding: 3px 0;
+	background: url(Images/img06.gif) repeat-x left bottom;
+}
+
+#links li a {
+	background: none;
+}
+
+#links li i {
+	font-size: smaller;
+}
+
+#links h2 {
+	font-size: 1.3em;
+}
+
+/* Footer */
+
+#footer {
+	padding: 40px 0 60px 0;
+	background: url(Images/img07.jpg) repeat-x;
+}
+
+#footer p {
+	width: 750px;
+	color: #FFFFFF;
+}
+
+#footer a {
+	background: none;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+#legal {
+	margin: 0 auto;
+	text-align: right;
+	font-size: 12px;
+}
+
+#brand {
+	margin: -35px auto 0 auto;
+	padding: 10px 0 0 0;
+	letter-spacing: -1px;
+	font-size: 24px;
+}
