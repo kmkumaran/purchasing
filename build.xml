@@ -27,7 +27,6 @@
 	        <fileset dir="WebContent"/>
 	        <lib dir="WebContent/WEB-INF/lib"/>
 	    </war>
-		<move file="dist/purchasing.war" todir="../"/>
 	</target>
 	
 	<target name="clean">
