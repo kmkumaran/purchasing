@@ -13,7 +13,7 @@
 	<div id="page">
 		<header>
 		<p class="site-title">
-			<a href="">Fabrikam Publishing</a>
+			<a href="">Fabrikam Purchasing</a>
 		</p>
 		<nav>
 		<ul>
@@ -22,19 +22,19 @@
 		</ul>
 		</nav> </header>
 		<div id="body">
-			<img alt="Welcome to Coffee Shop!" src="Images/banner_coffee.png"
+			<img alt="Welcome to Fabrikam Purchasing!" src="Images/banner_fabrikam.png"
 				height="200" />
 			<div id="featuredProduct">
-				<img alt="Featured Product" src="Images/1.jpg" height="300" />
+				<img alt="Featured Product" src="Images/1.png" height="300" />
 				<div id="featuredProductInfo">
 					<div id="productInfo">
-						<h2>Cappuccino</h2>
-						<p class="price">$3.45</p>
-						<p class="description">Cappuccino</p>
+						<h2>AV Cables</h2>
+						<p class="price">$345</p>
+						<p class="description">AV Cables</p>
 					</div>
 					<div id="callToAction">
 						<a class="order-button" href="placeorder.jsp?id=10"
-							title="Cappuccino">Order Now</a>
+							title="AV Cables">Order Now</a>
 					</div>
 				</div>
 			</div>
@@ -44,74 +44,74 @@
 				<ul id="products" data-role="listview" data-inset="true">
 
 					<li class="product"><a href="placeorder.jsp?id=10"
-						title="Cappuccino"> <img class="hide-from-desktop"
-							src="Images/1.jpg" alt="Image of Cappuccino" />
+						title="AV Cables"> <img class="hide-from-desktop"
+							src="Images/1.png" alt="Image of AV Cables" />
 							<div class="productInfo">
-								<h3>Cappuccino</h3>
-								<img class="product-image hide-from-mobile" src="Images/1.jpg"
-									alt="Image of Cappuccino" />
-								<p class="description">Cappuccino</p>
+								<h3>AV Cables</h3>
+								<img class="product-image hide-from-mobile" src="Images/1.png"
+									alt="Image of AV Cables" />
+								<p class="description">AV Cables</p>
 								<p class="price hide-from-desktop">$3.45</p>
 							</div>
 					</a>
 						<div class="action  hide-from-mobile">
-							<p class="price">$3.45</p>
+							<p class="price">$345</p>
 							<a class="order-button" href="placeorder.jsp?id=10"
-								title="Order Cappuccino">Order Now</a>
+								title="Order AV Cables">Order Now</a>
 						</div></li>
 					<li class="product"><a href="placeorder.jsp?id=11"
-						title="Espresso"> <img class="hide-from-desktop"
-							src="Images/3.jpg" alt="Image of Espresso" />
+						title="HDMI"> <img class="hide-from-desktop"
+							src="Images/3.jpg" alt="Image of HDMI" />
 							<div class="productInfo">
-								<h3>Espresso</h3>
+								<h3>HDMI</h3>
 								<img class="product-image hide-from-mobile" src="Images/3.jpg"
-									alt="Image of Espresso" />
-								<p class="description">Espresso</p>
-								<p class="price hide-from-desktop">$3.75</p>
+									alt="Image of HDMI" />
+								<p class="description">HDMI</p>
+								<p class="price hide-from-desktop">$375</p>
 							</div>
 					</a>
 						<div class="action  hide-from-mobile">
-							<p class="price">$3.75</p>
+							<p class="price">$375</p>
 							<a class="order-button" href="placeorder.jsp?id=11"
-								title="Order Espresso">Order Now</a>
+								title="Order HDMI">Order Now</a>
 						</div></li>
 					<li class="product"><a href="placeorder.jsp?id=12"
-						title="Americano"> <img class="hide-from-desktop"
-							src="Images/4.jpg" alt="Image of Americano" />
+						title="Set Top Box"> <img class="hide-from-desktop"
+							src="Images/4.jpg" alt="Image of Set Top Box" />
 							<div class="productInfo">
-								<h3>Americano</h3>
+								<h3>Set Top Box</h3>
 								<img class="product-image hide-from-mobile" src="Images/4.jpg"
-									alt="Image of Americano" />
-								<p class="description">Americano</p>
-								<p class="price hide-from-desktop">$4.75</p>
+									alt="Image of Set Top Box" />
+								<p class="description">Set Top Box</p>
+								<p class="price hide-from-desktop">$475</p>
 							</div>
 					</a>
 						<div class="action  hide-from-mobile">
-							<p class="price">$4.75</p>
+							<p class="price">$475</p>
 							<a class="order-button" href="placeorder.jsp?id=12"
-								title="Order Americano">Order Now</a>
+								title="Order Set Top Box">Order Now</a>
 						</div></li>
 					<li class="product"><a href="placeorder.jsp?id=13"
-						title="Latte"> <img class="hide-from-desktop"
-							src="Images/2.jpg" alt="Image of Latte" />
+						title="Power Cables"> <img class="hide-from-desktop"
+							src="Images/2.jpg" alt="Image of Power Cables" />
 							<div class="productInfo">
-								<h3>Latte</h3>
+								<h3>Power Cables</h3>
 								<img class="product-image hide-from-mobile" src="Images/2.jpg"
-									alt="Image of Latte" />
-								<p class="description">Latte</p>
-								<p class="price hide-from-desktop">$2.65</p>
+									alt="Image of Power Cables" />
+								<p class="description">Power Cables</p>
+								<p class="price hide-from-desktop">$265</p>
 							</div>
 					</a>
 						<div class="action  hide-from-mobile">
-							<p class="price">$2.65</p>
+							<p class="price">$265</p>
 							<a class="order-button" href="placeorder.jsp?id=13"
-								title="Order Latte">Order Now</a>
+								title="Order Power Cables">Order Now</a>
 						</div></li>
 
 				</ul>
 			</div>
 		</div>
-		<footer> &copy;2014 - Coffee Shop </footer>
+		<footer> &copy;2014 - Fabrikam Purchasing</footer>
 	</div>
 
 </body>

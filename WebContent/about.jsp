@@ -14,7 +14,7 @@
 	<div id="page">
 		<header>
 			<p class="site-title">
-				<a href="">Coffee Shop</a>
+				<a href="">Fabrikam Purchasing</a>
 			</p>
 			<nav>
 				<ul>
@@ -24,14 +24,14 @@
 			</nav>
 		</header>
 		<div id="body">
-		<img alt="Welcome to Coffee Shop!" src="Images/banner_coffee.png" height="200" />
+		<img alt="Welcome to Fabrikam Purchasing!" src="Images/banner_fabrikam.png" height="200" />
 			<section id="main">
-				<h1>About Coffee Shop</h1>
-				<p>Its a coffee shop !</p>
+				<h1>About Fabrikam Purchasing</h1>
+				<p>Its a Fabrikam Purchasing !</p>
 			</section>
 			<div id="sidebar"></div>
 		</div>
-		<footer> &copy;2014 - Coffee Shop </footer>
+		<footer> &copy;2014 - Fabrikam Purchasing </footer>
 	</div>
 </body>
 </html>
