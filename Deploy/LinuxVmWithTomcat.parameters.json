@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "newStorageAccountName": {
-            "value": "purchasing"
+            "value": "fabrikamlinuxqa"
         },
         "location": {
-            "value": "South Central US"
+            "value": "East US"
         },
         "adminUsername": {
             "value": "fabrikam"
@@ -15,7 +15,7 @@
             "value": "Password~1"
         },
         "vmDnsName": {
-            "value": "fabrikam-pub"
+            "value": "fabrikamlinuxqa"
         },
         "scriptUri": {  
             "value" : "defaultScript"
