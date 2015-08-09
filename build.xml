@@ -14,32 +14,18 @@
 	</path>
 	
 	<target name="init">
-		<mkdir dir="build/classes" />
-		<mkdir dir="dist" />
-		<copy includeemptydirs="false" todir="build/classes">
-			<fileset dir="src">
-				<exclude name="**/*.java" />
-			</fileset>
-		</copy>
 	</target>
 	
 	<path id="compile.classpath">
-	    <fileset dir="WebContent/WEB-INF/lib">
-	        <include name="*.jar"/>
-	    </fileset>
 	</path>
 	
 	<target name="compile" depends="init" >
-	    <javac compiler="javac1.8" target="1.8" destdir="build/classes" debug="true" srcdir="src" includeantruntime="true">
-	        <classpath refid="compile.classpath"/>
-	    </javac>
 	</target>
 	
 	<target name="war" depends="compile">
 	    <war destfile="dist/purchasing.war" webxml="WebContent/WEB-INF/web.xml">
 	        <fileset dir="WebContent"/>
 	        <lib dir="WebContent/WEB-INF/lib"/>
-	        <classes dir="build/classes"/>
 	    </war>
 		<move file="dist/purchasing.war" todir="../"/>
 	</target>
