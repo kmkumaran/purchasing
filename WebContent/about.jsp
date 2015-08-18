@@ -19,7 +19,8 @@
 			<nav>
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
-					<li><a href="about.jsp">Customers</a></li>					
+					<li><a href="about.jsp">Customers</a></li>
+					<li><a href="about.jsp">Customers</a></li>										
 				</ul>
 			</nav>
 		</header>
