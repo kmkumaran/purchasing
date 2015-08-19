@@ -19,7 +19,7 @@
 			<nav>
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
-					<li><a href="about.jsp">Custome</a></li>										
+					<li><a href="about.jsp">Custom</a></li>										
 				</ul>
 			</nav>
 		</header>
