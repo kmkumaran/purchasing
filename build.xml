@@ -29,16 +29,16 @@
 	    </war>
 	</target>
 	
-	<target name="copy" depends ="war">
+	<target name="copy" depends="war">
 		<copydir src="*"
            	dest="staging/drop"
            	includes="**/*.war" />
 	</target>
 	
-	<target name="clean">
+	<target name="clean" depends="copy">
 	    <delete dir="dist" />
 	    <delete dir="build" />
 	</target>
 	
-	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+
 </project>
