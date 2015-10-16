@@ -29,6 +29,12 @@
 	    </war>
 	</target>
 	
+	<target name="copy" depends ="war">
+		<copydir src="*"
+           	dest="staging/drop"
+           	includes="**/*.war" />
+	</target>
+	
 	<target name="clean">
 	    <delete dir="dist" />
 	    <delete dir="build" />
