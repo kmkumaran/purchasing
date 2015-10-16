@@ -12,6 +12,11 @@
 		<path refid="Web App Libraries.libraryclasspath"/>
 		<path refid="EAR Libraries.libraryclasspath"/>
 	</path>
+
+	<target name="clean">
+	    <delete dir="dist" />
+	    <delete dir="build" />
+	</target>
 	
 	<target name="init">
 	</target>
@@ -35,10 +40,4 @@
            	includes="**/*.war" />
 	</target>
 	
-	<target name="clean" depends="copy">
-	    <delete dir="dist" />
-	    <delete dir="build" />
-	</target>
-	
-
 </project>
