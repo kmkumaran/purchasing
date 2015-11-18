@@ -3,7 +3,7 @@
 ###Fabrikam Purchasing Website using Chef cookbook
 
 
-In this hands-on lab you will explore some of the new features and capabilities of Deploying Purchasing App via Chef Server to a VM in Azure.  
+In this hands-on lab you will explore some of the new features and capabilities of Deploying Purchasing App via Chef Server to a VM in Azure using Visual Studio Online Build and Release Management features
 
 **Prerequisites**
 
