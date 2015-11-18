@@ -3,13 +3,13 @@
 ###Fabrikam Purchasing Website using Chef cookbook
 
 
-In this hands-on lab you will explore some of the new features and capabilities of Deploying Purchasing App via Chef Server in Azure. This hands-on lab is designed to point out new features, discuss and describe them, and enable you to understand and explain these features to customers as part of the DevOps Lifecycle. 
+In this hands-on lab you will explore some of the new features and capabilities of Deploying Purchasing App via Chef Server to a VM in Azure.  
 
 **Prerequisites**
 
-- An on-prem Windows VM with VSO-Agent, configured as Chef workstation.
+- An on-prem Windows VM with VSO-Agent
 - Azure Linux Virtual Machine (target)
-- Hosted Chef account
+- Hosted/Enterprise Chef account 
 
 **Tasks**
 
