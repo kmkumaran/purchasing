@@ -3,7 +3,7 @@
 ###Fabrikam Purchasing Website using Chef cookbook
 
 
-In this hands-on lab you will explore some of the new features and capabilities of Deploying Purchasing App via Chef Server to a VM in Azure using Visual Studio Online Build and Release Management features
+In this demo you will explore some of the new features and capabilities of Visual Studio Online Build/Release Managment to Deploy a sample webapp 'Purchasing' using Chef deployment task to a VM in Azure
 
 **Prerequisites**
 
@@ -24,27 +24,29 @@ In this hands-on lab you will explore some of the new features and capabilities 
 
 **Step 1.** Open a web browser and navigate to the Chef Server URL
 
-**Step 2.** Create organization and download started kit onto your Windows VM
+**Step 2.** Create your organization in Chef and the download starter kit onto your Windows VM
 
-###Task 2: Configuring the Chef Workstation
-In this exercise, you will configure your Windows VM as a Chef Workstation.
-
-**Step 1.** Download and install Chef Development kit 
-
-The ChefDK can be installed on any workstation across a variety of operating systems and configured to work with a Chef server. For this lab, we are using the Windows VM as our workstation to make things easier and faster for a lab.
-
-**Step 2.** Set your environment to reference the ChefDK
-
-    $PATH ...<TODO>
-
-**Step 3.** Download Chef starter kit
+![](<media/chef-starter.png>)
 
 This creates a chef repo in the chef-repo directory.
 
  Chef uses RSA keys to encrypt all communication between the Chef workstation and the Chef server. Chef starter kit contains a file called <user>.pem, which contains the key for the user account. When we created our <fabrikam> organization, we saved the organization key into a file called <yourname-validator>.pem in our home directory. 
 
+###Task 2: Configuring Windows VM having the VSO Agent as the Chef Workstation
+In this exercise, you will configure your Windows VM as a Chef Workstation.
 
-**Step 4.** View the current chef-repo contents.
+**Step 1.** Download and install Chef Development kit for Windows
+
+[https://downloads.chef.io/chef-dk/windows/](https://downloads.chef.io/chef-dk/windows/)
+
+The ChefDK can be installed on any workstation across a variety of operating systems and configured to work with a Chef server. For this demo, we are using the Windows VM as our workstation to make things easier and faster for a lab.
+
+
+**Step 2.** Set your environment to reference the ChefDK
+
+    $PATH ...<TODO>
+
+**Step 3.** View the current chef-repo contents.
 
     dir c:\chef-repo
 
