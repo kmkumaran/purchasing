@@ -303,40 +303,28 @@ In this exercise, you will configure your Chef Workstation to use the Knife-Repo
     c:\chef-repo>chef gem install knife-reporting
 
 ###Task 7: Add your linux vm as a Chef 'Node'.
-Bootstrap your linux VM with chef-client and associate the run-list create in previous exercise. [How to Bootstrap Linux node](https://learn.chef.io/manage-a-node/ubuntu/bootstrap-your-node/).
+
+**Step 1.**Bootstrap your linux VM with chef-client and associate the run-list create in previous exercise. [How to Bootstrap Linux node](https://learn.chef.io/manage-a-node/ubuntu/bootstrap-your-node/).
 
     c:\chef-repo>knife bootstrap ADDRESS --ssh-user USER --ssh-password 'PASSWORD' --sudo --use-sudo-password --node-name node1 --run-list 'role[puchasing]' -E ENVIRONMENT
 
-You'll see that the node gets bootstrapped and chef cookbook associated with run-list gets exectued.
-
-###Task 4: Deploy the Application
-In this exercise, you will create a script to automatically deploy your Azure server and assign the purchasing application role to that server.
-
-**Step 3.** Test everything works from command-line. Use chef-client to invoke the provisioning script: 
-
-    ↪	chef-client  default.rb
-
-**Step 4.** The script will take approximately 15 minutes to run. You will see it do the following things:
+You'll see that the node gets bootstrapped and chef cookbook associated with run-list gets exectued.The script will take approximately 5 minutes to run. You will see it do the following things:
 -	Update the packages apt
 -	Intall tomcat on the VM and 
 -	Execute the *purchasing* recipe.
 
-Once the deployment is complete, you should be able to navigate to the purchasing application website and use it normally.
+**Step 2.** Click around the site and observe that it functions normally.
 
-**Step 5.** Open the URL you chose for your cloud service name in a browser. The URL should be something like [http://mycloudservice.cloudapp.net:9080/purchasing](http://mycloudservice.cloudapp.net:9080/purchasing). 
+    https://yourcloudservice.cloudapp.net:9080/purchasing
 
-![](<media/task7-step5.png>)
-
-**Step 6.** Click around the site and observe that it functions normally.
-
-
-**Step 7.** Go to the Chef Console in your web browser on your workstation and click on the **Reports** tab. 
+**Step 3.** Go to the Chef Console in your web browser on your workstation and click on the **Reports** tab. 
 This will take you to the dashboard where you can see statistics about your deployments.
 
-**Step 8.** Click **Run History**.
+**Step 4.** Click **Run History**.
 
-**Step 9.** Observe that the node has a first successful run that executed. You should see a run occur within a minute that shows number of resources executed. 
+**Step 5.** Observe that the node has a first successful run that executed. You should see a run occur within a minute that shows number of resources executed. 
 
 
-In this hands-on lab you explored some of the new features and capabilities of Deploying purchasing App via Chef Server in Azure. This hands-on lab was designed to point out new features, discuss and describe them, and enable you to understand and explain these features to customers as part of the DevOps Lifecycle.
+###Task 7: Setup continuous delivery using Build and Release definitions
+
 
