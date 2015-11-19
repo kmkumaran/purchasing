@@ -9,7 +9,7 @@ In this demo you will explore some of the new features and capabilities of Visua
 
 - Visual Studio Online Account. Link:[SignUp for VSO](https://www.visualstudio.com/en-us/get-started/setup/sign-up-for-visual-studio-online)
 - An on-prem Windows VM with VSO-Agent. Link:[Deploy a Windows VSO Build/Release Agent](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows)
-- Azure Linux Virtual Machine (target) Link:[Azure Portal](https://portal.azure.com/)
+- Azure Linux Virtual Machine (target) and a Storage Account Link:[Azure Portal](https://portal.azure.com/)
 - Hosted/Enterprise Chef account. Link [SingUp for Hosted Chef](https://api.chef.io/signup)
 
 **Tasks**
@@ -18,6 +18,7 @@ In this demo you will explore some of the new features and capabilities of Visua
 3. Configure the Chef Workstation
 4. Create a Cookbook
 5. Create a Role
+6. Add your linux vm as a Chef 'Node'
 6. Deploy the Application
 8. Setup continuous delivery using Build and Release definitions 
 
@@ -93,11 +94,7 @@ Cookbooks and recipes can leverage other cookbooks and recipes. Our cookbook wil
 
     C:\chef-repo\cookbook\knife cookbook site download apt
 
- We need to install two dependencies for our recipe: the apt cookbook, and the chef-client cookbook. This can be accomplished using the knife cookbook site command, which will download the cookbooks from the official Chef cookbook repository, [https://supermarket.chef.io/cookbooks](https://supermarket.chef.io/cookbooks).
-
-**Step 7.** Download the chef-client cookbook.
-
-    knife cookbook site download chef-client
+ We need to install additional dependencies for our recipe: the apt cookbook, and the chef-client, cron, logrotate & windows cookbook. This can be accomplished using the knife cookbook site command, which will download the cookbooks from the official Chef cookbook repository, [https://supermarket.chef.io/cookbooks](https://supermarket.chef.io/cookbooks).
 
 Extract the '*.tar.gz' files into cookbook directory. It should look like below
 
@@ -195,7 +192,7 @@ We can define the Tomcat servce's desired state, which is "running". This will c
 
 **Step 13.** Now that the recipe is written, we can upload the cookbooks to the Chef server. From the command line, run: 
 
-    knife cookbook upload apt chef-client purchasing
+    c:\chef-repo\cookbooks>knife cookbook upload apt cron logrotate windows chef-client purchasing
 
 Now that we have a recipe created and all of the dependencies installed, we can upload our cookbooks and recipes to the Chef server with the knife upload command.
 
@@ -254,7 +251,33 @@ The second recipe we added to the run list was chef-client:: service. This recip
 
 **Step 14.** Click **Create Role**.
 
-###Task 6: Install Knife-Reporting
+**Step 15.** Download the ![purchasing.war](<dist/purchasing.war>) & upload it to your Azure Storage account
+	*Note*: This is just a temporary step to check if the rest of the steps are correct. You can upload the war using PowerShell scripts if that’s your preferred method.
+		i)	Copy the war file generated on your Linux VM (ROOT.war) to your Windows VM.
+		ii)	Download the [Azure Storage explorer](https://azurestorageexplorer.codeplex.com/). It helps you manage your storage account, and blobs.
+		iii)	Upload the war file “purchasing.war” as a blob. 
+		iv)	Note the following details for the blob from the azure management portal under the storage account -> dashboard -> “manage access keys”
+			a.	Storage Account name
+			b.	Container name
+			c.	Blob name
+		These details are required in the environment attribute details
+
+**Step 16.** Add environment attributes referenced in our purchasing cookbooks. Click on "Policy" > Click on "Environments", Select the environment. In the bottom pane click on "Attributes" tab and edit "Default attributes". Blob attribute value would be the Azure blob storage url of the war. For the demo, public access to the blob is assumed.
+
+      {  
+         "purchasing": {
+             "blob": "https://<yourstorage>.blob.core.windows.net/<container>/purchasing.war",
+             "app_war": "purchasing.war"
+          }
+     }
+
+
+###Task 6: Add your linux vm as a Chef 'Node'.
+Bootstrap your linux VM with chef-client and associate the run-list create in previous exercise. [How to Bootstrap Linux node](https://learn.chef.io/manage-a-node/ubuntu/bootstrap-your-node/).
+
+    c:\chef-repo\knife bootstrap ADDRESS --ssh-user USER --ssh-password 'PASSWORD' --sudo --use-sudo-password --node-name node1 --run-list "recipe[puchasing], recipe[chef-client::service]"
+
+###Task 7: Install Knife-Reporting
 In this exercise, you will configure your Chef Workstation to use the Knife-Reporting plugin to determine the run status
 
 **Step 1.** Install Knife-Reporting: 
