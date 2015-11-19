@@ -3,13 +3,14 @@
 ###Fabrikam Purchasing Website using Chef cookbook
 
 
-In this demo you will explore some of the new features and capabilities of Visual Studio Online Build/Release Managment to Deploy a sample webapp 'Purchasing' using Chef deployment task to a VM in Azure
+In this demo you will explore some of the new features and capabilities of Visual Studio Online (VSO). The demo showcases VSO Build and Release Management feature which allows users to deploy a sample webapp 'Purchasing' (this repo) using Chef deployment task to a VM in Azure
 
 **Prerequisites**
 
-- An on-prem Windows VM with VSO-Agent
-- Azure Linux Virtual Machine (target)
-- Hosted/Enterprise Chef account 
+- Visual Studio Online Account. Link:[SignUp for VSO](https://www.visualstudio.com/en-us/get-started/setup/sign-up-for-visual-studio-online)
+- An on-prem Windows VM with VSO-Agent. Link:[Deploy a Windows VSO Build/Release Agent](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows)
+- Azure Linux Virtual Machine (target) Link:[Azure Portal](https://portal.azure.com/)
+- Hosted/Enterprise Chef account. Link [SingUp for Hosted Chef](https://api.chef.io/signup)
 
 **Tasks**
 
@@ -22,15 +23,22 @@ In this demo you will explore some of the new features and capabilities of Visua
 
 ###Task 1: Configure your organization in Chef Server
 
-**Step 1.** Open a web browser and navigate to the Chef Server URL
+**Step 1.** Login to your Chef account.
 
-**Step 2.** Create your organization in Chef and the download starter kit onto your Windows VM
+**Step 2.** Click on the "Administration" tab.
+
+**Step 3.** On the left pane under "Organizations", Click the "Create" button. 
+
+**Step 4.** Once your organiztion is created. Click on the Action menu, click on Starter Kit.
+
+**Step 5.** Click on Download Starter kit.
 
 ![](<media/chef-starter.png>)
 
-This creates a chef repo in the chef-repo directory.
 
- Chef uses RSA keys to encrypt all communication between the Chef workstation and the Chef server. Chef starter kit contains a file called <user>.pem, which contains the key for the user account. When we created our <fabrikam> organization, we saved the organization key into a file called <yourname-validator>.pem in our home directory. 
+**Step 6.** Copy and Extract the contents to your Windows VM configured with VSO Agent, to say 'C:\chef-repo'
+
+ Chef uses RSA keys to encrypt all communication between the Chef workstation and the Chef server. Chef starter kit contains a files in the directory c:\chef-repo\.chef called &lt;user&gt;.pem, which contains the key for the user account. When we created our orgainization, we got the organization key into a file called &lt;yourname-validator&gt;.pem in the 'c:\chef-repo\.chef' directory. 
 
 ###Task 2: Configuring Windows VM having the VSO Agent as the Chef Workstation
 In this exercise, you will configure your Windows VM as a Chef Workstation.
@@ -40,15 +48,6 @@ In this exercise, you will configure your Windows VM as a Chef Workstation.
 [https://downloads.chef.io/chef-dk/windows/](https://downloads.chef.io/chef-dk/windows/)
 
 The ChefDK can be installed on any workstation across a variety of operating systems and configured to work with a Chef server. For this demo, we are using the Windows VM as our workstation to make things easier and faster for a lab.
-
-
-**Step 2.** Set your environment to reference the ChefDK
-
-    $PATH ...<TODO>
-
-**Step 3.** View the current chef-repo contents.
-
-    dir c:\chef-repo
 
 **Step 5.** Synchronize the Chef repo.
 
