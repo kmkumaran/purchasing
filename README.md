@@ -1,4 +1,4 @@
-# purchasing
+# purchasing app
 
 ###Fabrikam Purchasing Website using Chef cookbook
 
@@ -255,7 +255,7 @@ The second recipe we added to the run list was chef-client:: service. This recip
 
 **Step 1.** We will prepare the purchasing app deployment package first. We need to set the location deployment package as an attribute of the environment in Chef server.
 
-Download the ![purchasing.war](<dist/purchasing.war>) & upload it to your Azure Storage account
+Download the [purchasing.war](dist/purchasing.war) & upload it to your Azure Storage account
 
 	*Note*: This is just a temporary step to check if the rest of the steps are correct. You can upload the war using PowerShell scripts if that’s your preferred method.
 
