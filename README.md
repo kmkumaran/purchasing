@@ -317,14 +317,72 @@ You'll see that the node gets bootstrapped and chef cookbook associated with run
 
     https://yourcloudservice.cloudapp.net:9080/purchasing
 
+
+###Task 7: Setup continuous delivery using Build and Release definitions
+
+**Step 1.** Clone this repo and build directly or clone and psuh it to your VSO account
+
+	For example,
+	git clone https://github.com/RoopeshNair/purchasing.git
+	cd purchasing/
+	git remote add vso <url_to_repository>
+	git push -u vso --all
+
+
+**Step 2.** Setup Chef Enpoint connection in VSO
+
+![](<media/chef-endpoint.png>)
+
+Fill in the details for the chef connection from the “chef-repo/.chef/knife.rb” file. 
+
+	i)  Chef server url: Should include the organisation name, just as is specified in the knife.rb file
+	
+	ii)  Node name is specified in the knife.rb file as well.
+	
+	iii) Copy all the contents from the client key file. Name should be <node name>.pem.
+
+
+**Step 2.** Setup your Build definition in VSO and queue Build
+Start with an empty build definition, setup your repository info
+
+![](<media/build-repo1.png>)
+
+![](<media/build-repo.png>)
+
+![](<media/build-ant.png>)
+
+![](<media/build-artifacts.png>)
+
+
+**Step 3.** Setup your Release definition and trigger release
+Start with an empty release definition, add Azure File Copy & Chef Task, Configure release definition with Azure Storage details
+
+![](<media/release-config.png>)
+
+
+Parameters for Azure File Copy Task:
+Source: <location of the files to be uploaded to azure blob>
+Subscription: <Select Azure subscription>
+Destiriontion Type: Azure Blob
+Storage Account: <Storage account>
+Container Name: <Azure Container>
+Blob prefix: Rel$(Release.ReleaseId)
+
+![](<media/release-azurecopy.png>)
+
+Parameters for Chef Task:
+Chef Connection: <Chef Endpoint name>
+Environment: <chef_demo or your env name>
+Environment Attribute:  {"default_attributes.purchasing.blob":"$(AzureContainerUri)/Rel$(Release.ReleaseId)/dist/purchasing.war"}
+ 
+![](<media/release-chef.png>)
+
+
+**Step 4.** Trigger release with new Ant based build from *Step 2*
+
 **Step 3.** Go to the Chef Console in your web browser on your workstation and click on the **Reports** tab. 
 This will take you to the dashboard where you can see statistics about your deployments.
 
 **Step 4.** Click **Run History**.
 
-**Step 5.** Observe that the node has a first successful run that executed. You should see a run occur within a minute that shows number of resources executed. 
-
-
-###Task 7: Setup continuous delivery using Build and Release definitions
-
-
+**Step 5.** Observe that the node has a first successful run that executed. 
