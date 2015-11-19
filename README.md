@@ -49,26 +49,26 @@ In this exercise, you will configure your Windows VM as a Chef Workstation.
 
 The ChefDK can be installed on any workstation across a variety of operating systems and configured to work with a Chef server. For this demo, we are using the Windows VM as our workstation to make things easier and faster for a lab.
 
-**Step 5.** Synchronize the Chef repo.
+**Step 2.** Synchronize the Chef repo.
 
-    knife download /
+    C:\chef-repo>knife download /
 
-**Step 6.** Run the **dir** command from Step 4 again, and observe that additional files and folders have been created in the chef-repo directory. 
+You will observe that additional files and folders have been created in the chef-repo directory. 
 
 ###Task 4: Create a Cookbook
 In this exercise, you will create a cookbook to automate the installation of the Purchasing application and upload it to the Chef server.
 
-**Step 1.** Use the knife tool to generate a cookbook template. 
+**Step 1.** Navigate to Chef-repo cookbook directory, use the knife tool to generate a cookbook template. 
 
-    knife cookbook create purchasing
+    C:\chef-repo\cookbook>knife cookbook create purchasing
 
  A cookbook is a set of tasks for configuring an application or feature. It defines a scenario and everything required to support that scenario. Within a cookbook, there are a series of recipes that define a set of actions to perform. Cookbooks and recipes are written in the Ruby language.
 
 This creates an “purchasing” directory in the chef-repo/cookbooks/ directory that contains all of the boilerplate code that defines a cookbook and a default recipe.
 
-**Step 2.** Edit the metadata.rb file in our cookbook directory.
-   
-    c:\chef-repo\cookbooks\purchasing\metadata.rb
+**Step 2.** Edit the metadata.rb file in our purchasing cookbook directory.
+
+    C:\chef-repo\cookbook\purchasing\metadata.rb
  
 Cookbooks and recipes can leverage other cookbooks and recipes. Our cookbook will use a pre-existing recipe for managing APT repositories.
 
@@ -91,13 +91,17 @@ Cookbooks and recipes can leverage other cookbooks and recipes. Our cookbook wil
 
 **Step 6.** Download the apt cookbook. 
 
-    knife cookbook site download apt
+    C:\chef-repo\cookbook\knife cookbook site download apt
 
  We need to install two dependencies for our recipe: the apt cookbook, and the chef-client cookbook. This can be accomplished using the knife cookbook site command, which will download the cookbooks from the official Chef cookbook repository, [https://supermarket.chef.io/cookbooks](https://supermarket.chef.io/cookbooks).
 
 **Step 7.** Download the chef-client cookbook.
 
     knife cookbook site download chef-client
+
+Extract the '*.tar.gz' files into cookbook directory. It should look like below
+
+![](<media/chef-cookbooks.png>)
 
 **Step 8.** We will first open up a full copy of the recipe on the host machine where you are connected to the Chef Server, found at [https://raw.githubusercontent.com/RoopeshNair/purchasing/master/Deploy/default.rb](https://raw.githubusercontent.com/RoopeshNair/purchasing/master/Deploy/default.rb).
 
@@ -114,9 +118,9 @@ Cookbooks and recipes can leverage other cookbooks and recipes. Our cookbook wil
     ↪	# All rights reserved - Do Not Redistribute
     ↪	#
     
-**Step 12.** Paste the contents of the recipe into the purchasing recipe file, save and exit
+**Step 11.** Paste the contents of the recipe into the purchasing recipe file at the end, save and exit
 
-**Step 13.** *The following explains what the recipe is doing to provision the application.*
+**Step 12.** *The following explains what the recipe is doing to provision the application.*
 
 The first thing the recipe will do will be to run the 'apt' resource – this will cause our recipe to execute 'apt-get update' prior to running, to make sure the package sources on the machine are up-to-date.
 
@@ -124,7 +128,8 @@ The first thing the recipe will do will be to run the 'apt' resource – this wi
     ↪	include_recipe "apt"
 
 Now we add an apt_repository resource to make sure that the OpenJDK repository is part of our apt repository list and up-to-date.
-    
+
+    ↪	
     ↪	# Add the Open JDK apt repo
     ↪	apt_repository 'openJDK' do
     ↪		uri 'ppa:openjdk-r/ppa'
@@ -188,9 +193,9 @@ We can define the Tomcat servce's desired state, which is "running". This will c
     ↪	end
 
 
-**Step 14.** Now that the recipe is written, we can upload the cookbooks to the Chef server. From the command line, run: 
+**Step 13.** Now that the recipe is written, we can upload the cookbooks to the Chef server. From the command line, run: 
 
-    knife cookbook upload purchasing chef-client apt 
+    knife cookbook upload apt chef-client purchasing
 
 Now that we have a recipe created and all of the dependencies installed, we can upload our cookbooks and recipes to the Chef server with the knife upload command.
 
