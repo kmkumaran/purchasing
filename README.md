@@ -362,8 +362,8 @@ Start with an empty release definition, add Azure File Copy & Chef Task, Configu
 
 ![](<media/release-azurecopy.png>)
 
-    .
-    Parameters for Chef Task:
+**Parameters for Chef Task**:
+   
     Chef Connection: <Chef Endpoint name>
     Environment: <chef_demo or your env name>
     Environment Attribute:  {"default_attributes.purchasing.blob":"$(AzureContainerUri)/Rel$(Release.ReleaseId)/dist/purchasing.war"}
