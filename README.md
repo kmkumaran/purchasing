@@ -360,20 +360,13 @@ Start with an empty release definition, add Azure File Copy & Chef Task, Configu
 ![](<media/release-config.png>)
 
 
-Parameters for Azure File Copy Task:
-Source: <location of the files to be uploaded to azure blob>
-Subscription: <Select Azure subscription>
-Destiriontion Type: Azure Blob
-Storage Account: <Storage account>
-Container Name: <Azure Container>
-Blob prefix: Rel$(Release.ReleaseId)
-
 ![](<media/release-azurecopy.png>)
 
-Parameters for Chef Task:
-Chef Connection: <Chef Endpoint name>
-Environment: <chef_demo or your env name>
-Environment Attribute:  {"default_attributes.purchasing.blob":"$(AzureContainerUri)/Rel$(Release.ReleaseId)/dist/purchasing.war"}
+    .
+    Parameters for Chef Task:
+    Chef Connection: <Chef Endpoint name>
+    Environment: <chef_demo or your env name>
+    Environment Attribute:  {"default_attributes.purchasing.blob":"$(AzureContainerUri)/Rel$(Release.ReleaseId)/dist/purchasing.war"}
  
 ![](<media/release-chef.png>)
 
