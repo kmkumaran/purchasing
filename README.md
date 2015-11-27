@@ -381,3 +381,4 @@ This will take you to the dashboard where you can see statistics about your depl
 **Step 5.** Observe that the node has a first successful run that executed. 
 
 Added Jenkins Build support. Added integration with AWS pipeline.
+New change
