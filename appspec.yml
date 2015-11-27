@@ -5,8 +5,8 @@ files:
     destination: C:\Tomcat\apache-tomcat-9.0.0.M1\webapps
 hooks:
   BeforeInstall:
-    - location: \before-install.bat
+    - location: \deploy\before-install.bat
       timeout: 900
   AfterInstall:
-    - location: \after-install.bat
+    - location: \deploy\after-install.bat
       timeout: 900
