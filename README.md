@@ -1,6 +1,6 @@
 # purchasing app
 
-###Fabrikam Purchasing Website using Chef cookbook
+###Fabrikam Purchasing Website using Chef cookbook (making a change)
 
 
 In this demo you will explore some of the new features and capabilities of Visual Studio Online (VSO). The demo showcases VSO Build and Release Management feature which allows users to deploy a sample webapp 'Purchasing' (this repo) using Chef deployment task to a VM in Azure
